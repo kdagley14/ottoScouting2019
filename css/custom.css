@@ -1,0 +1,33 @@
+.navbar-wrapper {
+    width: 100%;
+}
+.flexbox {
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+.d-flex {
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#brand{
+    max-height: 40px;
+}
+
+#allianceMemberDropdown {
+    max-width: 60%;
+}
+
+#dropdown {
+    float: right; 
+}
+
+textarea {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
