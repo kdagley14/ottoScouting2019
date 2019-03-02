@@ -22,12 +22,12 @@
             <span id="allianceMember">Select Alliance Member</span><span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="#" class="text-danger">Red 1</a></li>
-                <li><a href="#" class="text-danger">Red 2</a></li>
-                <li><a href="#" class="text-danger">Red 3</a></li>
-                <li><a href="#" class="text-primary">Blue 1</a></li>
-                <li><a href="#" class="text-primary">Blue 2</a></li>
-                <li><a href="#" class="text-primary">Blue 3</a></li>
+                <li><a id="red1" href="#" class="text-danger">Red 1</a></li>
+                <li><a id="red2" href="#" class="text-danger">Red 2</a></li>
+                <li><a id="red3" href="#" class="text-danger">Red 3</a></li>
+                <li><a id="blue1" href="#" class="text-primary">Blue 1</a></li>
+                <li><a id="blue2" href="#" class="text-primary">Blue 2</a></li>
+                <li><a id="blue3" href="#" class="text-primary">Blue 3</a></li>
             </ul>
         </div>
     </nav>
@@ -35,6 +35,8 @@
     <div class="container pt-4 text-center">
         <div id="startMessage">
             <p>Select an Alliance Member above to begin scouting.</p>
+            <hr></hr>
+            <a href="setup.php">Competition Setup</a>
         </div>
 
         <div id="prematchDiv" class="d-none">
@@ -42,6 +44,7 @@
             <p>Select the robot's starting position:</p>
             <button id="startPos1" class="btn btn-light btn-outline-secondary d-inline px-4 m-3">1</button>
             <button id="startPos2" class="btn btn-light btn-outline-secondary d-inline px-4 m-3">2</button>
+            <button id="didNotShow" class="btn btn-light btn-outline-secondary d-inline px-4 m-3">Did Not Show</button>
             <img src="images/BlankFieldStart.jpg" class="d-block mx-auto" style="max-height:400px">
 
             <hr></hr>
@@ -618,7 +621,7 @@
             <button id="helpOthersClimb2" class="btn btn-light btn-outline-secondary d-inline px-4 mx-3 mt-1 mb-4">Yes, 2 Robots</button>
 
             <div id="howHelpOthersClimbDiv" class="d-none">
-                <p>How did they help the other robot(s) climb?</p>
+                <p>How did they help the other robot(s) climb? (Lift, Ramp, etc.)</p>
                 <textarea class="form-control mb-4" rows="2" id="howHelpOthersClimb"></textarea>
             </div>
 
@@ -627,7 +630,7 @@
             <button id="helpedToClimbYes" class="btn btn-light btn-outline-secondary d-inline px-4 mx-3 mt-1 mb-4">Yes</button>
 
             <div id="howHelpedToClimbDiv" class="d-none">
-                <p>How did the other robot help this robot climb?</p>
+                <p>How did the other robot help this robot climb? (Lift, Ramp, etc.)</p>
                 <textarea class="form-control mb-4" rows="2" id="howHelpedToClimb"></textarea>
             </div>
 

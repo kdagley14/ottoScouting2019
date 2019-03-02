@@ -1,3 +1,6 @@
+var teamNum;
+var matchNum;
+var allianceMember;
 var startPosition = null;
 var leftHAB = null;
 var preload = null;
@@ -9,19 +12,19 @@ var climbBonus = 0;
 var helpOthersClimb = 0;
 var helpedToClimb = null;
 
-var sandstormTopHatches;
-var sandstormMidHatches;
-var sandstormLowHatches;
-var sandstormTopCargo;
-var sandstormMidCargo;
-var sandstormLowCargo;
+var sandstormTopHatches = 0;
+var sandstormMidHatches = 0;
+var sandstormLowHatches = 0;
+var sandstormTopCargo = 0;
+var sandstormMidCargo = 0;
+var sandstormLowCargo = 0;
 
-var teleopTopHatches;
-var teleopMidHatches;
-var teleopLowHatches;
-var teleopTopCargo;
-var teleopMidCargo;
-var teleopLowCargo;
+var teleopTopHatches = 0;
+var teleopMidHatches = 0;
+var teleopLowHatches = 0;
+var teleopTopCargo = 0;
+var teleopMidCargo = 0;
+var teleopLowCargo = 0;
 
 // alliance member dropdown menu
 $('.dropdown-menu a').click(function(){
@@ -41,6 +44,7 @@ $('.dropdown-menu a').click(function(){
         allianceColor = "blue";
     }
     getMatchAndTeam();
+    clearForm(allianceColor);
 
     $('#prematchDiv').removeClass('d-none');
     $('#sandstormDiv').addClass('d-none');
@@ -55,6 +59,7 @@ $('#startPos1').click(function(){
     startPosition = 1;
     $('#startPos1').addClass('active');
     $('#startPos2').removeClass('active');
+    $('#didNotShow').removeClass('active');
     $('#nextSandstorm').prop('disabled', false);
     updateSandstormBonus();
 });
@@ -64,8 +69,37 @@ $('#startPos2').click(function(){
     startPosition = 2;
     $('#startPos2').addClass('active');
     $('#startPos1').removeClass('active');
+    $('#didNotShow').removeClass('active');
     $('#nextSandstorm').prop('disabled', false);
     updateSandstormBonus();
+});
+
+$('#didNotShow').click(function(){
+    var didNotShow = confirm("Are you sure you want to mark this team as \"Did Not Show\"?");
+    if (didNotShow) {
+        $.ajax({
+            url: 'php-database/sendMatchDataNoShow.php',
+            type: 'POST',
+            dataType:'json',
+            data: {
+                teamNum: teamNum,
+                matchNum: matchNum,
+                allianceMember: allianceMember
+            },
+            success: function(response) {
+                if (response === 1) {
+                    alert("Match data successfully added to database.");
+                    $('#' + allianceMember).click();
+                    clearForm(allianceColor);
+                } else {
+                    alert(response);
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError);
+            }
+        });
+    }
 });
 
 // next button
@@ -264,7 +298,56 @@ $('#backTeleop').click(function(){
 
 // submit button
 $('#submit').click(function(){
-
+    var totalHatches = sandstormTopHatches + sandstormMidHatches + sandstormLowHatches + teleopTopHatches + teleopMidHatches + teleopLowHatches;
+    var totalCargo = sandstormTopCargo + sandstormMidCargo + sandstormLowCargo + teleopTopCargo + teleopMidCargo + teleopLowCargo;
+    var howHelpOthersClimb = $('#howHelpOthersClimb').val();
+    var howHelpedToClimb = $('#howHelpedToClimb').val();
+    var comments = $('#comments').val();
+    $.ajax({
+        url: 'php-database/sendMatchData.php',
+        type: 'POST',
+        dataType:'json',
+        data: {
+            teamNum: teamNum,
+            matchNum: matchNum,
+            allianceMember: allianceMember,
+            startPosition: startPosition,
+            endPosition: endPosition,
+            leftHAB: (leftHAB ? 1 : 0),
+            preload: preload,
+            totalPoints: points,
+            helpOthersClimb: helpOthersClimb,
+            helpedToClimb: (helpedToClimb ? 1 : 0),
+            totalHatches: totalHatches,
+            totalCargo: totalCargo,
+            sandstormTopHatches: sandstormTopHatches,
+            sandstormMidHatches: sandstormMidHatches,
+            sandstormLowHatches: sandstormLowHatches,
+            sandstormTopCargo: sandstormTopCargo,
+            sandstormMidCargo: sandstormMidCargo,
+            sandstormLowCargo: sandstormLowCargo,
+            teleopTopHatches: teleopTopHatches,
+            teleopMidHatches: teleopMidHatches,
+            teleopLowHatches: teleopLowHatches,
+            teleopTopCargo: teleopTopCargo,
+            teleopMidCargo: teleopMidCargo,
+            teleopLowCargo: teleopLowCargo,
+            howHelpOthersClimb: howHelpOthersClimb,
+            howHelpedToClimb: howHelpedToClimb,
+            comments: comments
+        },
+        success: function(response) {
+            if (response === 1) {
+                alert("Match data successfully added to database.");
+                $('#' + allianceMember).click();
+            } else {
+                alert(response);
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(thrownError);
+        }
+    });
 });
 
 function postmatchQsAnswered() {
@@ -277,7 +360,7 @@ function postmatchQsAnswered() {
 
 // get match number and team number from database, populate text in navbar
 function getMatchAndTeam() {
-    var allianceMember = $('#allianceMember').text().toLowerCase().replace(" ", "");
+    allianceMember = $('#allianceMember').text().toLowerCase().replace(" ", "");
     $.ajax({
         url: 'php-database/getMatchAndTeam.php',
         type: 'POST',
@@ -293,12 +376,84 @@ function getMatchAndTeam() {
             } else {
                 $('#matchNum').text(response['matchNum']);
                 $('#teamNum').text(response[allianceMember]);
+                matchNum = response['matchNum'];
+                teamNum = response[allianceMember];
             }
         },
         error: function (xhr, ajaxOptions, thrownError) {
             alert(thrownError);
         }
     });
+}
+
+function clearForm(color) {
+    startPosition = null;
+    leftHAB = null;
+    preload = null;
+    allianceColor = color;
+    sandstormBonus = 0;
+    points = 0;
+    endPosition = null;
+    climbBonus = 0;
+    helpOthersClimb = 0;
+    helpedToClimb = null;
+    sandstormTopHatches = 0;
+    sandstormMidHatches = 0;
+    sandstormLowHatches = 0;
+    sandstormTopCargo = 0;
+    sandstormMidCargo = 0;
+    sandstormLowCargo = 0;
+    teleopTopHatches = 0;
+    teleopMidHatches = 0;
+    teleopLowHatches = 0;
+    teleopTopCargo = 0;
+    teleopMidCargo = 0;
+    teleopLowCargo = 0;
+
+    $('#startPos1').removeClass('active');
+    $('#startPos2').removeClass('active');
+    $('#didNotShow').removeClass('active');
+
+    $('#leftHAB').removeClass('active');
+    $('#stayedInHAB').removeClass('active');
+    $('#noPreload').removeClass('active');
+    $('#cargoPreload').removeClass('active');
+    $('#hatchPreload').removeClass('active');
+
+    $('#blueSandstormField').addClass('d-none');
+    $('#blueTeleopField').addClass('d-none');
+    $('#redSandstormField').addClass('d-none');
+    $('#redTeleopField').addClass('d-none');
+
+    for (let i = 1; i <= 20; i++) {
+        $("#redHatch" + i).removeClass('active'); 
+        $("#redCargo" + i).removeClass('active');
+        $("#redHatchTeleop" + i).removeClass('active'); 
+        $("#redCargoTeleop" + i).removeClass('active');
+        $("#blueHatch" + i).removeClass('active'); 
+        $("#blueCargo" + i).removeClass('active'); 
+        $("#blueHatchTeleop" + i).removeClass('active'); 
+        $("#blueCargoTeleop" + i).removeClass('active');
+    }
+
+    $('#endPos1').removeClass('active');
+    $('#endPos2').removeClass('active');
+    $('#endPos3').removeClass('active');
+    $('#endPos4').removeClass('active');
+    $('#helpOthersClimb0').removeClass('active');
+    $('#helpOthersClimb1').removeClass('active');
+    $('#helpOthersClimb2').removeClass('active');
+    $('#helpedToClimbNo').removeClass('active');
+    $('#helpedToClimbYes').removeClass('active');
+    
+    $('#howHelpOthersClimbDiv').addClass('d-none');
+    $('#howHelpOthersClimb').val("");
+    $('#howHelpedToClimbDiv').addClass('d-none');
+    $('#howHelpedToClimb').val("");
+    $('#comments').val("");
+
+    $('#nextSandstorm').prop('disabled', true);
+    $('#nextTeleop').prop('disabled', true);
 }
 
 function updateSandstormBonus() {
@@ -444,7 +599,6 @@ function updateTally(gameTime, type, number, point) {
     // update score on page
     $('#numPoints').text(points);
 }
-
 
 //-----------------------------------------------------------------------//
 //--------------------------GAME PIECE BUTTONS---------------------------//

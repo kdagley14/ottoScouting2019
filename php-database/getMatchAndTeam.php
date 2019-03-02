@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "ottoscouting2019";
+include 'globalVars.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,8 +9,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT $_POST[allianceMember], matchNum FROM testSchedule WHERE matchNum = ((
-            SELECT IFNULL(MAX(matchNum), 0) FROM testMatchData
+$sql = "SELECT $_POST[allianceMember], matchNum FROM matchSchedule WHERE matchNum = ((
+            SELECT IFNULL(MAX(matchNum), 0) FROM matchData
             WHERE allianceMember = '$_POST[allianceMember]'
         ) + 1)";
 
