@@ -353,6 +353,8 @@ $('#submit').click(function(){
 function postmatchQsAnswered() {
     if (endPosition !== null && helpOthersClimb !== null && helpedToClimb !== null) {
         $('#submit').prop('disabled', false);
+    } else {
+        $('#submit').prop('disabled', true);
     }
 }
 
@@ -454,6 +456,7 @@ function clearForm(color) {
 
     $('#nextSandstorm').prop('disabled', true);
     $('#nextTeleop').prop('disabled', true);
+    $('#submit').prop('disabled', true);
 }
 
 function updateSandstormBonus() {
