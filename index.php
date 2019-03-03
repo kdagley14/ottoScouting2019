@@ -14,7 +14,10 @@
             <p class="navbar-text pl-3">Scouting</p>
         </a>
         
-        <div class="navbar-text col-2 text-center">Match:<span id="matchNum" class="text-white pl-2"></span></div>
+        <div class="col-2 text-center">
+            <div class="navbar-text mr-1">Match:</div>
+            <input type="text" id="matchNum" class="d-inline form-control pl-2">
+        </div>
         <div class="navbar-text col-2 text-center">Team:<span id="teamNum" class="text-white pl-2"></span></div>
         <div class="navbar-text col-2 text-center">Points:<span id="numPoints" class="text-white pl-2">0</span></div>
         <div id="dropdown" class="btn-group col-3">

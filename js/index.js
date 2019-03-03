@@ -1,6 +1,6 @@
 var teamNum;
-var matchNum;
-var allianceMember;
+var matchNum = null;
+var allianceMember = null;
 var startPosition = null;
 var leftHAB = null;
 var preload = null;
@@ -52,6 +52,14 @@ $('.dropdown-menu a').click(function(){
     $('#postmatchDiv').addClass('d-none');
 });
 
+$('#matchNum').blur(function() {
+    if (allianceMember !== null) {
+        matchNum = $('#matchNum').val();
+        console.log(matchNum);
+        getTeam();
+    }
+});
+
 // -------------- PREMATCH DIV -------------- //
 
 // starting position 1 button
@@ -60,7 +68,9 @@ $('#startPos1').click(function(){
     $('#startPos1').addClass('active');
     $('#startPos2').removeClass('active');
     $('#didNotShow').removeClass('active');
-    $('#nextSandstorm').prop('disabled', false);
+    if ($('#teamNum').text() != "N/A") {
+        $('#nextSandstorm').prop('disabled', false);
+    }
     updateSandstormBonus();
 });
 
@@ -70,7 +80,9 @@ $('#startPos2').click(function(){
     $('#startPos2').addClass('active');
     $('#startPos1').removeClass('active');
     $('#didNotShow').removeClass('active');
-    $('#nextSandstorm').prop('disabled', false);
+    if ($('#teamNum').text() != "N/A") {
+        $('#nextSandstorm').prop('disabled', false);
+    }
     updateSandstormBonus();
 });
 
@@ -298,6 +310,8 @@ $('#backTeleop').click(function(){
 
 // submit button
 $('#submit').click(function(){
+    $('#submit').prop('disabled', true);
+    $('#submit').text("Loading");
     var totalHatches = sandstormTopHatches + sandstormMidHatches + sandstormLowHatches + teleopTopHatches + teleopMidHatches + teleopLowHatches;
     var totalCargo = sandstormTopCargo + sandstormMidCargo + sandstormLowCargo + teleopTopCargo + teleopMidCargo + teleopLowCargo;
     var howHelpOthersClimb = $('#howHelpOthersClimb').val();
@@ -341,8 +355,10 @@ $('#submit').click(function(){
                 alert("Match data successfully added to database.");
                 $('#' + allianceMember).click();
             } else {
-                alert(response);
+                alert("Error: " . response);
             }
+            $('#submit').text("Submit");
+            $('#submit').prop('disabled', true);
         },
         error: function (xhr, ajaxOptions, thrownError) {
             alert(thrownError);
@@ -376,9 +392,36 @@ function getMatchAndTeam() {
                 $('#matchNum').text("N/A");
                 $('#teamNum').text("N/A");
             } else {
-                $('#matchNum').text(response['matchNum']);
+                $('#matchNum').val(response['matchNum']);
                 $('#teamNum').text(response[allianceMember]);
-                matchNum = response['matchNum'];
+                matchNum = $('#matchNum').val();
+                teamNum = response[allianceMember];
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(thrownError);
+        }
+    });
+}
+
+function getTeam() {
+    if (allianceMember === null) {
+        allianceMember = $('#allianceMember').text().toLowerCase().replace(" ", "");
+    }
+    $.ajax({
+        url: 'php-database/getTeam.php',
+        type: 'POST',
+        dataType:'json',
+        data: {
+            allianceMember: allianceMember,
+            matchNum: matchNum
+        },
+        success: function(response) {
+            if (response == "empty") {
+                alert("This match doesn't exist or has already been scouted for this alliance member");
+                $('#teamNum').text("N/A");
+            } else {
+                $('#teamNum').text(response[allianceMember]);
                 teamNum = response[allianceMember];
             }
         },
@@ -389,6 +432,7 @@ function getMatchAndTeam() {
 }
 
 function clearForm(color) {
+    matchNum = null;
     startPosition = null;
     leftHAB = null;
     preload = null;
@@ -411,6 +455,9 @@ function clearForm(color) {
     teleopTopCargo = 0;
     teleopMidCargo = 0;
     teleopLowCargo = 0;
+
+    $('#matchNum').val("");
+    $('#numPoints').text(points);
 
     $('#startPos1').removeClass('active');
     $('#startPos2').removeClass('active');

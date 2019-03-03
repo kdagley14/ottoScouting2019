@@ -32,7 +32,13 @@ textarea {
     margin-right: auto;
 }
 
-input[type=text] {
+#eventKey {
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#matchNum {
     max-width: 40%;
     margin-left: auto;
     margin-right: auto;
