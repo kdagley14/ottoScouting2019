@@ -35,6 +35,7 @@
           
         <div class="text-center">
             <h3>Step 2</h3>
+            <p>Create the tables for the database</p>
             <button id="createTables" class="btn btn-light btn-outline-secondary d-inline px-4 mx-3 mt-1 mb-4">Create Tables</button>
             <hr></hr>
         </div>
@@ -53,7 +54,44 @@
                 <input type="text" class="form-control" id="eventKey">
                 <button id="uploadSchedule" class="btn btn-light btn-outline-secondary d-inline px-4 mx-3 mt-3 mb-4">Upload Schedule</button>
             </div>
-        </div>   
+            <hr></hr>
+        </div>
+
+        <div>
+            <h3 class="text-center">Step 4</h3>
+            <p>Make sure the main scouting computer's IP address is set to 192.168.1.101</p>
+            <ul>
+                <li>Open the computer's network settings</li>
+                <li>Change the adapter settings for the ethernet IP address</li>
+            </ul>
+            <p>Make sure all other scouting computers IP addresses are set to 192.168.1.XXX</p>
+            <ul>
+                <li>XXX can be any number from 102-200, as long as each computer has a different IP address</li>
+            </ul>
+            <hr></hr>
+        </div> 
+
+        <div class="text-center">
+            <h3>Step 5</h3>
+            <p>Once the computers are all connected, you should be able to bring up the scouting system on all the computers by entering 192.168.1.101:8888 in for the url</p>
+            <hr></hr>
+        </div> 
+
+        <div>
+            <h3 class="text-center">Debugging Errors</h3>
+            <p>Make sure you are connected to the database correctly</p>
+            <ul>
+                <li>Open globalVars.php in the MAMP/htdocs/php-database folder and check that the database credentials are correct</li>
+                <ul>
+                    <li>servername: localhost:8889</li>
+                    <li>username: otto</li>
+                    <li>password: otto</li>
+                    <li>dbname: [insert current competition database name here]</li>
+                </ul>
+            </ul>
+            <hr></hr>
+        </div> 
+
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
