@@ -639,9 +639,9 @@
 
             <hr></hr>
             <div id="defenseAgainstRating">
-                <p>How susceptible was the robot to the <b>other alliance's defense</b> on a scale of 1-10?</p>
+                <p>How good was the <b>other alliance's defense</b> on a scale of 1-10?</p>
                 <div class="form-inline justify-content-center">
-                    <p><i>Bot unaffected</i></p>
+                    <p><i>Horrible</i></p>
                     <div id="defAgainstRating" class="btn-group px-4 mx-3 mt-1 mb-4" role="group">
                         <button type="button" class="btn btn-light btn-outline-secondary">N/A</button>
                         <button type="button" class="btn btn-light btn-outline-secondary">1</button>
@@ -655,7 +655,7 @@
                         <button type="button" class="btn btn-light btn-outline-secondary">9</button>
                         <button type="button" class="btn btn-light btn-outline-secondary">10</button>
                     </div>
-                    <p><i>Bot completely shutdown</i></p>
+                    <p><i>Amazing</i></p>
                 </div>
             </div>
 
