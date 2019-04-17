@@ -109,7 +109,7 @@
                 <!--CARGO SHIP ROW-->
                 <div class="row">
                     <div class="col">
-                        <div class="float-left">
+                        <div class="float-right">
                             <button id="redHatch7" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="redHatch8" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="redHatch9" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-left">
+                        <div class="float-right">
                             <button id="redCargo7" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="redCargo8" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="redCargo9" class="btn btn-light btn-outline-warning my-1">Cargo</button>
@@ -127,22 +127,22 @@
                 </div>
                 <div class="row">
                     <div class="col d-inline">
-                        <img src="images/CargoShipRed.png" class="float-left" style="max-height:150px">
-                        <span class="float-left">
+                        <img src="images/CargoShipRed.png" class="float-right" style="max-height:150px">
+                        <span class="float-right">
                             <div>
-                                <button id="redCargo10" class="btn btn-light btn-outline-warning mt-4 mb-1">Cargo</button>
                                 <button id="redHatch10" class="btn btn-light btn-outline-secondary mt-4 mb-1">Hatch</button>
+                                <button id="redCargo10" class="btn btn-light btn-outline-warning mt-4 mb-1">Cargo</button>
                             </div>
                             <div>
-                                <button id="redCargo11" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                                 <button id="redHatch11" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
+                                <button id="redCargo11" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             </div>
                         </span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-left">
+                        <div class="float-right">
                             <button id="redCargo12" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="redCargo13" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="redCargo14" class="btn btn-light btn-outline-warning my-1">Cargo</button>
@@ -151,7 +151,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-left">
+                        <div class="float-right">
                             <button id="redHatch12" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="redHatch13" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="redHatch14" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
@@ -240,7 +240,7 @@
                 <!--CARGO SHIP ROW-->
                 <div class="row">
                     <div class="col">
-                        <div class="float-right">
+                        <div class="float-left">
                             <button id="blueHatch7" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="blueHatch8" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="blueHatch9" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
@@ -249,7 +249,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-right">
+                        <div class="float-left">
                             <button id="blueCargo7" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="blueCargo8" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="blueCargo9" class="btn btn-light btn-outline-warning my-1">Cargo</button>
@@ -258,22 +258,22 @@
                 </div>
                 <div class="row">
                     <div class="col d-inline">
-                        <img src="images/CargoShipBlue.png" class="float-right" style="max-height:150px">
-                        <span class="float-right">
+                        <img src="images/CargoShipBlue.png" class="float-left" style="max-height:150px">
+                        <span class="float-left">
                             <div>
-                                <button id="blueHatch10" class="btn btn-light btn-outline-secondary mt-4 mb-1">Hatch</button>
                                 <button id="blueCargo10" class="btn btn-light btn-outline-warning mt-4 mb-1">Cargo</button>
+                                <button id="blueHatch10" class="btn btn-light btn-outline-secondary mt-4 mb-1">Hatch</button>
                             </div>
                             <div>
-                                <button id="blueHatch11" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                                 <button id="blueCargo11" class="btn btn-light btn-outline-warning my-1">Cargo</button>
+                                <button id="blueHatch11" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             </div>
                         </span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-right">
+                        <div class="float-left">
                             <button id="blueCargo12" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="blueCargo13" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="blueCargo14" class="btn btn-light btn-outline-warning my-1">Cargo</button>
@@ -282,7 +282,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-right">
+                        <div class="float-left">
                             <button id="blueHatch12" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="blueHatch13" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="blueHatch14" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
@@ -384,7 +384,7 @@
                 <!--CARGO SHIP ROW-->
                 <div class="row">
                     <div class="col">
-                        <div class="float-left">
+                        <div class="float-right">
                             <button id="redHatchTeleop7" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="redHatchTeleop8" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="redHatchTeleop9" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
@@ -393,7 +393,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-left">
+                        <div class="float-right">
                             <button id="redCargoTeleop7" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="redCargoTeleop8" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="redCargoTeleop9" class="btn btn-light btn-outline-warning my-1">Cargo</button>
@@ -402,22 +402,22 @@
                 </div>
                 <div class="row">
                     <div class="col d-inline">
-                        <img src="images/CargoShipRed.png" class="float-left" style="max-height:150px">
-                        <span class="float-left">
+                        <img src="images/CargoShipRed.png" class="float-right" style="max-height:150px">
+                        <span class="float-right">
                             <div>
-                                <button id="redCargoTeleop10" class="btn btn-light btn-outline-warning mt-4 mb-1">Cargo</button>
                                 <button id="redHatchTeleop10" class="btn btn-light btn-outline-secondary mt-4 mb-1">Hatch</button>
+                                <button id="redCargoTeleop10" class="btn btn-light btn-outline-warning mt-4 mb-1">Cargo</button>
                             </div>
                             <div>
-                                <button id="redCargoTeleop11" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                                 <button id="redHatchTeleop11" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
+                                <button id="redCargoTeleop11" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             </div>
                         </span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-left">
+                        <div class="float-right">
                             <button id="redCargoTeleop12" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="redCargoTeleop13" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="redCargoTeleop14" class="btn btn-light btn-outline-warning my-1">Cargo</button>
@@ -426,7 +426,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-left">
+                        <div class="float-right">
                             <button id="redHatchTeleop12" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="redHatchTeleop13" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="redHatchTeleop14" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
@@ -515,7 +515,7 @@
                 <!--CARGO SHIP ROW-->
                 <div class="row">
                     <div class="col">
-                        <div class="float-right">
+                        <div class="float-left">
                             <button id="blueHatchTeleop7" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="blueHatchTeleop8" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="blueHatchTeleop9" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
@@ -524,7 +524,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-right">
+                        <div class="float-left">
                             <button id="blueCargoTeleop7" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="blueCargoTeleop8" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="blueCargoTeleop9" class="btn btn-light btn-outline-warning my-1">Cargo</button>
@@ -533,22 +533,22 @@
                 </div>
                 <div class="row">
                     <div class="col d-inline">
-                        <img src="images/CargoShipBlue.png" class="float-right" style="max-height:150px">
-                        <span class="float-right">
+                        <img src="images/CargoShipBlue.png" class="float-left" style="max-height:150px">
+                        <span class="float-left">
                             <div>
-                                <button id="blueHatchTeleop10" class="btn btn-light btn-outline-secondary mt-4 mb-1">Hatch</button>
                                 <button id="blueCargoTeleop10" class="btn btn-light btn-outline-warning mt-4 mb-1">Cargo</button>
+                                <button id="blueHatchTeleop10" class="btn btn-light btn-outline-secondary mt-4 mb-1">Hatch</button>
                             </div>
                             <div>
-                                <button id="blueHatchTeleop11" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                                 <button id="blueCargoTeleop11" class="btn btn-light btn-outline-warning my-1">Cargo</button>
+                                <button id="blueHatchTeleop11" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             </div>
                         </span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-right">
+                        <div class="float-left">
                             <button id="blueCargoTeleop12" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="blueCargoTeleop13" class="btn btn-light btn-outline-warning my-1">Cargo</button>
                             <button id="blueCargoTeleop14" class="btn btn-light btn-outline-warning my-1">Cargo</button>
@@ -557,7 +557,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="float-right">
+                        <div class="float-left">
                             <button id="blueHatchTeleop12" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="blueHatchTeleop13" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
                             <button id="blueHatchTeleop14" class="btn btn-light btn-outline-secondary my-1">Hatch</button>
@@ -635,6 +635,73 @@
             <div id="howHelpedToClimbDiv" class="d-none">
                 <p>How did the other robot help this robot climb? (Lift, Ramp, etc.)</p>
                 <textarea class="form-control mb-4" rows="2" id="howHelpedToClimb"></textarea>
+            </div>
+
+            <hr></hr>
+            <div id="defenseAgainstRating">
+                <p>How susceptible was the robot to the <b>other alliance's defense</b> on a scale of 1-10?</p>
+                <div class="form-inline justify-content-center">
+                    <p><i>Bot unaffected</i></p>
+                    <div id="defAgainstRating" class="btn-group px-4 mx-3 mt-1 mb-4" role="group">
+                        <button type="button" class="btn btn-light btn-outline-secondary">N/A</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">1</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">2</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">3</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">4</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">5</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">6</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">7</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">8</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">9</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">10</button>
+                    </div>
+                    <p><i>Bot completely shutdown</i></p>
+                </div>
+            </div>
+
+            <div id="defenseTimeDiv">
+                <p>Approximately how much time did the robot spend playing defense?</p>
+                <div id="defTime" class="btn-group px-4 mx-3 mt-1 mb-4" role="group">
+                    <button type="button" class="btn btn-light btn-outline-secondary">None</button>
+                    <button type="button" class="btn btn-light btn-outline-secondary">1/4 Match</button>
+                    <button type="button" class="btn btn-light btn-outline-secondary">1/2 Match</button>
+                    <button type="button" class="btn btn-light btn-outline-secondary">3/4 Match</button>
+                    <button type="button" class="btn btn-light btn-outline-secondary">All Match</button>
+                </div>
+            </div>
+
+            <div id="defenseRatingDiv">
+                <p>How effective was <b>the robot's defense</b> on a scale of 1-10?</p>
+                <div class="form-inline justify-content-center">
+                    <p><i>Bot unaffected</i></p>
+                    <div id="defRating" class="btn-group px-4 mx-3 mt-1 mb-4" role="group">
+                        <button type="button" class="btn btn-light btn-outline-secondary">N/A</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">1</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">2</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">3</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">4</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">5</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">6</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">7</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">8</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">9</button>
+                        <button type="button" class="btn btn-light btn-outline-secondary">10</button>
+                    </div>
+                    <p><i>Bot completely shutdown</i></p>
+                </div>
+            </div>
+
+            <hr></hr>
+            <div id="brokenDiv">
+                <p>Did the robot <b>break at any point</b> during the match?</p>
+                <button id="brokenNo" class="btn btn-light btn-outline-secondary d-inline px-4 mx-3 mt-1 mb-4">No</button>
+                <button id="brokenYes" class="btn btn-light btn-outline-secondary d-inline px-4 mx-3 mt-1 mb-4">Yes</button>
+            </div>
+
+            <div id="deadDiv">
+                <p>Was the robot <b>dead for any part</b> of the match?</p>
+                <button id="deadNo" class="btn btn-light btn-outline-secondary d-inline px-4 mx-3 mt-1 mb-4">No</button>
+                <button id="deadYes" class="btn btn-light btn-outline-secondary d-inline px-4 mx-3 mt-1 mb-4">Yes</button>
             </div>
 
             <p>Any other comments about this robot?</p>

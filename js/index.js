@@ -26,6 +26,12 @@ var teleopTopCargo = 0;
 var teleopMidCargo = 0;
 var teleopLowCargo = 0;
 
+var broken = null;
+var dead = null;
+var defenseRating = 0;
+var defenseTime = null;
+var defenseAgainstRating = 0;
+
 // alliance member dropdown menu
 $('.dropdown-menu a').click(function(){
     $('#allianceMember').text($(this).text());
@@ -301,6 +307,75 @@ $('#helpedToClimbYes').click(function(){
     postmatchQsAnswered();
 });
 
+$("#defAgainstRating > button.btn").on("click", function(){
+    $('#defAgainstRating > .btn').removeClass('active');
+    $(this).addClass('active');
+    var text = $(this).text();
+    if (text == "N/A") {
+      text = null;
+    }
+    defenseAgainstRating = text;
+    postmatchQsAnswered();
+});
+
+$("#defTime > button.btn").on("click", function(){
+    $('#defTime > .btn').removeClass('active');
+    $(this).addClass('active');
+    var text = $(this).text();
+    if (text == "None") {
+        text = 0;
+    } else if (text == "1/4 Match") {
+        text = 37.5;
+    } else if (text == "1/2 Match") {
+        text = 75;
+    } else if (text == "3/4 Match") {
+        text = 112.5;
+    } else if (text == "All Match") {
+        text = 150;
+    }
+    defenseTime = text;
+    postmatchQsAnswered();
+});
+
+$("#defRating > button.btn").on("click", function(){
+    $('#defRating > .btn').removeClass('active');
+    $(this).addClass('active');
+    var text = $(this).text();
+    if (text == "N/A") {
+      text = null;
+    }
+    defenseRating = text;
+    postmatchQsAnswered();
+});
+
+$('#brokenNo').click(function(){
+    $('#brokenNo').addClass('active');
+    $('#brokenYes').removeClass('active');
+    broken = false;
+    postmatchQsAnswered();
+});
+
+$('#brokenYes').click(function(){
+    $('#brokenYes').addClass('active');
+    $('#brokenNo').removeClass('active');
+    broken = true;
+    postmatchQsAnswered();
+});
+
+$('#deadNo').click(function(){
+    $('#deadNo').addClass('active');
+    $('#deadYes').removeClass('active');
+    dead = false;
+    postmatchQsAnswered();
+});
+
+$('#deadYes').click(function(){
+    $('#deadYes').addClass('active');
+    $('#deadNo').removeClass('active');
+    dead = true;
+    postmatchQsAnswered();
+});
+
 // back button
 $('#backTeleop').click(function(){
     $('#postmatchDiv').addClass('d-none');
@@ -346,6 +421,11 @@ $('#submit').click(function(){
             teleopTopCargo: teleopTopCargo,
             teleopMidCargo: teleopMidCargo,
             teleopLowCargo: teleopLowCargo,
+            defenseRating: defenseRating,
+            defenseTime: defenseTime,
+            defenseAgainstRating: defenseAgainstRating,
+            broken: (broken ? 1 : 0),
+            dead: (dead ? 1 : 0),
             howHelpOthersClimb: howHelpOthersClimb,
             howHelpedToClimb: howHelpedToClimb,
             comments: comments
@@ -367,7 +447,8 @@ $('#submit').click(function(){
 });
 
 function postmatchQsAnswered() {
-    if (endPosition !== null && helpOthersClimb !== null && helpedToClimb !== null) {
+    if (endPosition !== null && helpOthersClimb !== null && helpedToClimb !== null && broken !== null && 
+                dead !== null && defenseRating !== 0 && defenseTime !== null & defenseAgainstRating !== 0) {
         $('#submit').prop('disabled', false);
     } else {
         $('#submit').prop('disabled', true);

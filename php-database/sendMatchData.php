@@ -34,6 +34,11 @@ $sql = "INSERT INTO matchData (
             teleopTopCargo,
             teleopMidCargo,
             teleopLowCargo,
+            defenseRating,
+            defenseTime,
+            defenseAgainstRating,
+            broken,
+            dead,
             howHelpOthersClimb,
             howHelpedToClimb,
             comments
@@ -62,6 +67,11 @@ $sql = "INSERT INTO matchData (
             '$_POST[teleopTopCargo]',
             '$_POST[teleopMidCargo]',
             '$_POST[teleopLowCargo]',
+            '$_POST[defenseRating]',
+            '$_POST[defenseTime]',
+            '$_POST[defenseAgainstRating]',
+            '$_POST[broken]',
+            '$_POST[dead]',
             '$_POST[howHelpOthersClimb]',
             '$_POST[howHelpedToClimb]',
             '$_POST[comments]'
